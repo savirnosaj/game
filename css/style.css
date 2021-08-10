@@ -1,0 +1,41 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: silver;
+}
+
+/* Layout */
+#world {
+    width: 50%;
+}
+
+.row {
+    line-height: 0;
+}
+
+.wall {
+    background-color: red;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+.blank {
+    background-color: blue;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+/* Player */
+#player {
+    background-color: orange;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    /* background-image: url('');
+    background-size: contain; */
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
