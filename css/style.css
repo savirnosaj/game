@@ -39,3 +39,16 @@ html, body {
     top: 40px;
     left: 40px;
 }
+
+/* Enemy */
+.enemy {
+    background-color: pink;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    /* background-image: url('');
+    background-size: contain; */
+    /* position: absolute;
+    top: 120px;
+    left: 160px; */
+}

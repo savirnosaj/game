@@ -4,8 +4,13 @@
 var WORLD = [
     [2,2,2,2,2,2,2,2,2,2,2],
     [2,0,0,0,0,0,0,0,0,0,2],
-    [2,0,0,0,0,0,0,0,0,0,2],
-    [2,0,0,0,0,0,0,0,0,0,2],
+    [2,0,0,0,0,6,0,0,0,0,2],
+    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,0,0,0,0,0,6,2],
     [2,2,2,2,2,2,2,2,2,2,2]
 ];
 
@@ -15,6 +20,7 @@ var WORLD = [
 var gameDictionary = {
     0: 'blank',
     2: 'wall',
+    6: 'enemy'
 };
 
 // 
@@ -72,7 +78,7 @@ function movePlayer(){
 movePlayer();
 
 document.onkeydown = function(keydown){
-    console.log(keydown);
+    // console.log(keydown);
     if(keydown.keyCode == 37){ // LEFT
         if(WORLD[playerLocation.y][playerLocation.x - 1] != 2){
             playerLocation.x--;
@@ -98,3 +104,29 @@ document.onkeydown = function(keydown){
     movePlayer();
     drawWorld();
 }
+
+// Enemy Logic
+
+function moveEnemy(){
+
+    // loop: iterate through 'World' array;
+    for(var r = 0; r < WORLD.length; r++){
+    
+        // loop: iterate through each individual array's index values in our World arrays;
+        for(var rIndex = 0; rIndex < WORLD[r].length; rIndex++){
+            
+            if(gameDictionary[WORLD[r] [rIndex]] === 'enemy'){
+    
+                if(WORLD[r] [rIndex - 1] != 2){
+    
+                    WORLD[r] [rIndex] = 0;
+                    WORLD[r] [rIndex - 1] = 6;
+                }
+            }
+            drawWorld();
+        }
+    }
+}
+
+setInterval(moveEnemy, 2000);
+console.log(WORLD);
