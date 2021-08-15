@@ -1,3 +1,8 @@
+// Set [] on webpage load;
+const gameOver = document.getElementById("game-over");
+
+// Hide HTML
+
 // Creating Game Map
 
 // variable array: creating the Stage by storing values as strings made of our HTML elements;
@@ -6,11 +11,11 @@ var WORLD = [
     [2,0,0,0,0,0,0,0,0,0,2],
     [2,0,0,0,0,6,0,0,0,0,2],
     [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,2,2,2,0,0,0,2],
+    [2,0,0,8,2,2,2,0,0,8,2],
+    [2,0,0,0,0,0,0,0,0,0,2],
     [2,0,0,0,0,0,0,0,0,6,2],
-    [2,0,0,0,0,0,0,0,0,6,2],
-    [2,0,0,0,0,0,0,0,0,6,2],
-    [2,0,0,0,0,0,0,0,0,6,2],
-    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,0,0,0,0,8,0,0,0,0,2],
     [2,2,2,2,2,2,2,2,2,2,2]
 ];
 
@@ -20,7 +25,9 @@ var WORLD = [
 var gameDictionary = {
     0: 'blank',
     2: 'wall',
-    6: 'enemy'
+    3: 'notebook',
+    6: 'goblin',
+    8: 'orc'
 };
 
 // 
@@ -60,7 +67,7 @@ drawWorld();
 // Now Working with Player Object
 
 // variables:
-// var count = 0;
+var count = 0;
 
 // setting player's location:
 var playerLocation = {
@@ -78,7 +85,7 @@ function movePlayer(){
 movePlayer();
 
 document.onkeydown = function(keydown){
-    // console.log(keydown);
+    console.log(keydown);
     if(keydown.keyCode == 37){ // LEFT
         if(WORLD[playerLocation.y][playerLocation.x - 1] != 2){
             playerLocation.x--;
@@ -100,7 +107,15 @@ document.onkeydown = function(keydown){
         }
     }
 
-    // Logic depending on where the player is located on the screen, on which index value in the array
+    // Game Logic
+
+    // if player location is where the initial check is, then do something which is:
+    if(WORLD[playerLocation.y][playerLocation.x] == 6){
+        gameOver.style.display = "block";
+    }
+    // else if(WORLD[playerLocation.y][playerLocation.x] == []){
+    // }
+
     movePlayer();
     drawWorld();
 }
@@ -115,12 +130,26 @@ function moveEnemy(){
         // loop: iterate through each individual array's index values in our World arrays;
         for(var rIndex = 0; rIndex < WORLD[r].length; rIndex++){
             
-            if(gameDictionary[WORLD[r] [rIndex]] === 'enemy'){
+            if(gameDictionary[WORLD[r] [rIndex]] === 'goblin'){
     
                 if(WORLD[r] [rIndex - 1] != 2){
     
                     WORLD[r] [rIndex] = 0;
                     WORLD[r] [rIndex - 1] = 6;
+                }
+                else if(WORLD[r] [rIndex - 1] == 2){
+                    WORLD[r] [rIndex] = 0;
+                }
+            }
+            else if(gameDictionary[WORLD[r] [rIndex]] === 'orc'){
+    
+                if(WORLD[r] [rIndex - 1] != 2){
+    
+                    WORLD[r] [rIndex] = 0;
+                    WORLD[r] [rIndex - 1] = 8;
+                }
+                else if(WORLD[r] [rIndex - 1] == 2){
+                    WORLD[r] [rIndex] = 0;
                 }
             }
             drawWorld();
@@ -130,3 +159,5 @@ function moveEnemy(){
 
 setInterval(moveEnemy, 2000);
 console.log(WORLD);
+
+// 
