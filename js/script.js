@@ -8,13 +8,13 @@ const gameOver = document.getElementById("game-over");
 // variable array: creating the Stage by storing values as strings made of our HTML elements;
 var WORLD = [
     [2,2,2,2,2,2,2,2,2,2,2],
+    [2,0,2,0,0,0,0,0,0,0,2],
+    [2,6,0,0,0,2,0,0,0,0,2],
     [2,0,0,0,0,0,0,0,0,0,2],
-    [2,0,0,0,0,6,0,0,0,0,2],
-    [2,0,0,0,0,0,0,0,0,6,2],
     [2,0,0,0,2,2,2,0,0,0,2],
     [2,0,0,8,2,2,2,0,0,8,2],
     [2,0,0,0,0,0,0,0,0,0,2],
-    [2,0,0,0,0,0,0,0,0,6,2],
+    [2,6,0,0,0,0,0,0,0,0,2],
     [2,0,0,0,0,8,0,0,0,0,2],
     [2,2,2,2,2,2,2,2,2,2,2]
 ];
@@ -122,7 +122,7 @@ document.onkeydown = function(keydown){
 
 // Enemy Logic
 
-function moveEnemy(){
+function moveSlowEnemy(){
 
     // loop: iterate through 'World' array;
     for(var r = 0; r < WORLD.length; r++){
@@ -130,26 +130,17 @@ function moveEnemy(){
         // loop: iterate through each individual array's index values in our World arrays;
         for(var rIndex = 0; rIndex < WORLD[r].length; rIndex++){
             
-            if(gameDictionary[WORLD[r] [rIndex]] === 'goblin'){
+            if(gameDictionary[WORLD[r] [rIndex]] === 'orc'){
     
-                if(WORLD[r] [rIndex - 1] != 2){
+                if(WORLD[r] [rIndex + 1] != 2){
     
                     WORLD[r] [rIndex] = 0;
-                    WORLD[r] [rIndex - 1] = 6;
+                    rIndex++;
+                    WORLD[r] [rIndex] = 8;
                 }
-                else if(WORLD[r] [rIndex - 1] == 2){
+                else if(WORLD[r] [rIndex + 1] == 2){
                     WORLD[r] [rIndex] = 0;
-                }
-            }
-            else if(gameDictionary[WORLD[r] [rIndex]] === 'orc'){
-    
-                if(WORLD[r] [rIndex - 1] != 2){
-    
-                    WORLD[r] [rIndex] = 0;
-                    WORLD[r] [rIndex - 1] = 8;
-                }
-                else if(WORLD[r] [rIndex - 1] == 2){
-                    WORLD[r] [rIndex] = 0;
+                    WORLD[r] [1] = 8;
                 }
             }
             drawWorld();
@@ -157,7 +148,36 @@ function moveEnemy(){
     }
 }
 
-setInterval(moveEnemy, 2000);
-console.log(WORLD);
+setInterval(moveSlowEnemy, 2500);
+
+// 
+
+function moveFastEnemy(){
+
+    // loop: iterate through 'World' array;
+    for(var b = 0; b < WORLD.length; b++){
+    
+        // loop: iterate through each individual array's index values in our World arrays;
+        for(var bIndex = 0; bIndex < WORLD[b].length; bIndex++){
+            
+            if(gameDictionary[WORLD[b] [bIndex]] === 'goblin'){
+    
+                if(WORLD[b] [bIndex + 1] != 2){
+    
+                    WORLD[b] [bIndex] = 0;
+                    bIndex++;
+                    WORLD[b] [bIndex] = 6;
+                }
+                else if(WORLD[b] [bIndex + 1] == 2){
+                    WORLD[b] [bIndex] = 0;
+                    WORLD[b] [1] = 6;
+                }
+            }
+            drawWorld();
+        }
+    }
+}
+
+setInterval(moveFastEnemy, 1000);
 
 // 
