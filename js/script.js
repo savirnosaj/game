@@ -60,7 +60,7 @@ function drawWorld(){
 
         // loop: iterate through each individual array's index values in our World arrays;
         for(var rowIndex = 0; rowIndex < WORLD[row].length; rowIndex++){
-            
+
             // logic: insert a class titled: grab the property in gameDictionary with the value according to the property number;
             worldRow += "<a id = 'button' href = '#" + gameDictionary[WORLD[row] [rowIndex]] + "Info'><div class = '" + gameDictionary[WORLD[row] [rowIndex]] + "'></div></a>"; // add our HTML element incatinated value which is our value that is in our array that's in our World array, to our new string 'output';
         }
