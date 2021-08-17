@@ -3,12 +3,16 @@ html, body {
     margin: 0;
 }
 
+/* #button {
+
+} */
+
 .wrapper {
     padding: 60px;
     background-color: silver;
 }
 
-.game-container {
+#game-area {
     width: 1020px;
 }
 
@@ -30,6 +34,12 @@ html, body {
     display: inline-block;
     vertical-align: top;
     text-align: center;
+}
+
+.item-title {
+    padding: 7px;
+    font-size: 20px;
+    margin: 0;
 }
 
 #item-screw {
@@ -56,6 +66,8 @@ html, body {
     border-radius: 50%;
 }
 
+/* Images */
+
 #screw {
     height: 40px;
     width: 40px;
@@ -78,6 +90,41 @@ html, body {
     background-image: url('../img/bolt-cutter.png');
     background-size: contain;
     opacity: 0.25;
+}
+
+#goblinImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/goblin-head.png');
+    background-size: contain;
+}
+
+#orcImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/orc-head.png');
+    background-size: contain;
+}
+
+#maniacImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/balaclava.png');
+    background-size: contain;
+}
+
+#amanitaImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/super-mushroom.png');
+    background-size: contain;
+}
+
+#playerImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/quick-man.png');
+    background-size: contain;
 }
 
 /* Player */
@@ -106,11 +153,13 @@ html, body {
     width: 60px;
     background-image: url('../img/stone-wall.png');
     background-size: contain;
+    pointer-events: none;
 }.blank {
     background-color: #000;
     display: inline-block;
     height: 60px;
     width: 60px;
+    pointer-events: none;
 }.goblin {
     background-color: #000;
     display: inline-block;
@@ -178,4 +227,147 @@ html, body {
     width: 50px;
     background-image: url('../img/hearts.png');
     background-size: contain;
+}
+
+/* Game Object Pop Up */
+#close
+{
+  position:absolute;
+  right: 0;
+  top: 0;
+  background-color:#fff;
+  font-size:16px;
+  padding:3px 7px;
+  border-radius:50%;
+  border: 3px solid #6495ed;
+  font-weight:bold;
+  color:#000;
+  text-decoration:none;
+  font-family:arial;
+}
+
+#close:hover
+{
+  background-color:#fff;
+  border-color:#ff0000;
+  color:#6495ed;
+}
+
+#close:active
+{
+  background-color: #6495ed;
+  color:#fff;
+}
+
+#wallInfo {
+    display: none;
+    top: 150px;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    border: 5px solid #fff;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#wallInfo:target {
+    display: block;
+}
+
+#goblinInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#goblinInfo:target {
+    display: block;
+}
+
+#orcInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#orcInfo:target {
+    display: block;
+}
+
+#maniacInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#maniacInfo:target {
+    display: block;
+}
+
+#amanitaInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#amanitaInfo > .link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+#amanitaInfo > .link:hover {
+    color: #6495ed;
+}
+
+#amanitaInfo:target {
+    display: block;
+}
+
+/* Player Info */
+#playerInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#playerInfo:target {
+    display: block;
 }

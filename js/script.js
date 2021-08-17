@@ -62,7 +62,7 @@ function drawWorld(){
         for(var rowIndex = 0; rowIndex < WORLD[row].length; rowIndex++){
             
             // logic: insert a class titled: grab the property in gameDictionary with the value according to the property number;
-            worldRow += "<div class = '" + gameDictionary[WORLD[row] [rowIndex]] + "'></div>"; // add our HTML element incatinated value which is our value that is in our array that's in our World array, to our new string 'output';
+            worldRow += "<a id = 'button' href = '#" + gameDictionary[WORLD[row] [rowIndex]] + "Info'><div class = '" + gameDictionary[WORLD[row] [rowIndex]] + "'></div></a>"; // add our HTML element incatinated value which is our value that is in our array that's in our World array, to our new string 'output';
         }
 
         // logic: insert closing row div that will be inserted into the world HTML element;
@@ -164,6 +164,18 @@ document.onkeydown = function(keydown){
     else if(WORLD[playerLocation.y][playerLocation.x] == 7){ // Mushroom Item
         points += 25;
         console.log("Picked up a Mushroom: " + "25 Points");
+        if(lives.length < 3 && lives.length > 1){
+            lives.push("Live");
+            liveThree.style.display = "inline-block";
+        }
+        else if(lives.length < 2 && lives.length > 0){
+            lives.push("Live");
+            liveTwo.style.display = "inline-block";
+        }
+        else if(lives.length < 1){
+            lives.push("Live");
+            liveOne.style.display = "inline-block";
+        }
     }
 
     WORLD[playerLocation.y][playerLocation.x] = 0; // make every index value 0 (blank) to mimic item pickup;
