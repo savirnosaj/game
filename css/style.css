@@ -1,56 +1,181 @@
 html, body {
     padding: 0;
     margin: 0;
+}
+
+.wrapper {
+    padding: 60px;
     background-color: silver;
 }
+
+.game-container {
+    width: 1020px;
+}
+
+/* .container {
+    text-align: center;
+} */
 
 /* Game Over <div> */
 #game-over {
     display: none;
 }
 
+/* Item <div> */
+#items {
+    background-color: #6495ed;
+    border: 5px solid #000;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+#item-screw {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
+#item-wrench {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
+#item-boltCutter {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
+#screw {
+    height: 40px;
+    width: 40px;
+    background-image: url('../img/screw.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+#wrench {
+    height: 40px;
+    width: 40px;
+    background-image: url('../img/wrench.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+#bolt-cutter {
+    height: 40px;
+    width: 40px;
+    background-image: url('../img/bolt-cutter.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+/* Player */
+#player {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/quick-man.png');
+    background-size: contain;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+}
+
 /* Layout */
 
 #world {
-    width: 50%;
+   display: inline-block;
+   border: 5px solid #000;
+   margin-left: -5px;
 }.row {
     line-height: 0;
 }.wall {
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     background-image: url('../img/stone-wall.png');
     background-size: contain;
+}.blank {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
 }.goblin {
     background-color: #000;
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     background-image: url('../img/goblin-head.png');
     background-size: contain;
 }.orc {
     background-color: #000;
     display: inline-block;
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     background-image: url('../img/orc-head.png');
     background-size: contain;
-}.blank {
+}.screw {
     background-color: #000;
     display: inline-block;
-    height: 40px;
-    width: 40px;
-}
-
-/* Player */
-
-#player {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-image: url('../img/duality-mask.png');
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/screw.png');
     background-size: contain;
-    position: absolute;
-    top: 40px;
-    left: 40px;
+}.wrench {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/wrench.png');
+    background-size: contain;
+}.bolt-cutter {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/bolt-cutter.png');
+    background-size: contain;
+}.maniac {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/balaclava.png');
+    background-size: contain;
+}.amanita {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/super-mushroom.png');
+    background-size: contain;
+}#liveOne {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url('../img/hearts.png');
+    background-size: contain;
+}#liveTwo {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url('../img/hearts.png');
+    background-size: contain;
+}#liveThree {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url('../img/hearts.png');
+    background-size: contain;
 }
