@@ -46,7 +46,18 @@ var gameDictionary = {
     9: 'maniac'
 };
 
-// 
+// Now Working with Player Object
+
+// variables:
+var points = 0;
+var lives = ['Live', 'Live', 'Live'];
+// let pickedItems = [];
+
+// setting player's location:
+var playerLocation = {
+    x: 1,
+    y: 1
+};
 
 // function: create a div using JS called "row" for each index value in our World array;
 function drawWorld(){
@@ -75,20 +86,6 @@ function drawWorld(){
 
 // call the function immediately when the web-page is ran; 
 drawWorld();
-
-
-
-// Now Working with Player Object
-
-// variables:
-var points = 0;
-var lives = ['Live', 'Live', 'Live'];
-
-// setting player's location:
-var playerLocation = {
-    x: 1,
-    y: 1
-};
 
 // function to set & move player across the game-field by altering it's stored location starting from the far top left corner;
 function movePlayer(){
@@ -148,18 +145,21 @@ document.onkeydown = function(keydown){
         console.log("Picked up a Screw: " + "10 Points");
         screw.style.opacity = 1;
         screwItem.style.border = "5px solid #008000";
+        pickedItems.push(screw);
     }
     else if(WORLD[playerLocation.y][playerLocation.x] == 4){ // Wrench Item
         points += 10;
         console.log("Picked up a Wrench: " + "10 Points");
         wrench.style.opacity = 1;
         wrenchItem.style.border = "5px solid #008000";
+        pickedItems.push(wrench);
     }
     else if(WORLD[playerLocation.y][playerLocation.x] == 5){ // Bolt-Cutter Item
         points += 15;
         console.log("Picked up a Bolf-Cutter: " + "15 Points");
         boltCutter.style.opacity = 1;
         boltCutterItem.style.border = "5px solid #008000";
+        pickedItems.push(boltCutter);
     }
     else if(WORLD[playerLocation.y][playerLocation.x] == 7){ // Mushroom Item
         points += 25;
@@ -203,6 +203,19 @@ document.onkeydown = function(keydown){
     console.log("Total: " + points);
 }
 
+//////////////////////////////////////////////////////////////
+// Functionality for checking if player has picked up items
+// Comment out the function below to disable the functionality
+// Sergey, 08/18/2021
+//////////////////////////////////////////////////////////////
+
+// if (pickedItems.length == 3) {
+//     console.log("You Win!");
+//     gameOver.style.display = "flex";
+//     gameOver.style.flexDirection = "column";
+//     gameOver.style.justifyContent = "center";
+//     gameOver.style.alignItems = "center";
+// }
 
 
 // Enemy Logic
