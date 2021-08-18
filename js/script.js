@@ -279,7 +279,7 @@ function moveFastEnemy(){
 // Generate random world when web-page is reloaded
 // create algorithm that makes enemy chase player
 
-function reload() {
+function restartGame() {
     location.reload();
     return false;
 }
