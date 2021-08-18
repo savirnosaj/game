@@ -327,6 +327,59 @@ html, body {
     display: block;
 }
 
+/* Player Info */
+#bolt-cutterInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#bolt-cutterInfo:target {
+    display: block;
+}
+
+#screwInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#screwInfo:target {
+    display: block;
+}
+
+#wrenchInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#wrenchInfo:target {
+    display: block;
+}
+
+
 #amanitaInfo {
     display: none;
     top: 150px;
