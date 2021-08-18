@@ -379,7 +379,6 @@ html, body {
     display: block;
 }
 
-
 #amanitaInfo {
     display: none;
     top: 150px;
@@ -422,5 +421,23 @@ html, body {
 }
 
 #playerInfo:target {
+    display: block;
+}
+
+/* Game Over */
+#game-overInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#game-overInfo:target {
     display: block;
 }

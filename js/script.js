@@ -1,5 +1,5 @@
 // Set [] on webpage load;
-const gameOver = document.getElementById("game-over");
+const gameOver = document.getElementById("game-overInfo");
 const screw = document.getElementById("screw");
 const screwItem = document.getElementById("item-screw");
 const wrench = document.getElementById("wrench");
@@ -278,3 +278,8 @@ function moveFastEnemy(){
 // 
 // Generate random world when web-page is reloaded
 // create algorithm that makes enemy chase player
+
+function reload() {
+    location.reload();
+    return false;
+}
