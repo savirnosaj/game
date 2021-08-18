@@ -246,7 +246,7 @@ function moveSlowEnemy(){
     }
 }
 
-// setInterval(moveSlowEnemy, 2500);
+setInterval(moveSlowEnemy, 2500);
 
 // 
 
@@ -289,7 +289,7 @@ function moveFastEnemy(){
     }
 }
 
-// setInterval(moveFastEnemy, 1000);
+setInterval(moveFastEnemy, 1000);
 
 // 
 // Generate random world when web-page is reloaded
