@@ -191,7 +191,10 @@ document.onkeydown = function(keydown){
     }
     else if(lives.length == 0) {
         liveOne.style.display = "none";
-        gameOver.style.display = "block";
+        gameOver.style.display = "flex";
+        gameOver.style.flexDirection = "column";
+        gameOver.style.justifyContent = "center";
+        gameOver.style.alignItems = "center";
     }
 
     movePlayer();
