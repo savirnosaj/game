@@ -12,17 +12,109 @@ html, body {
     background-color: silver;
 }
 
-#game-area {
-    width: 1020px;
+.mar-left {
+    margin-left: 20px;
 }
 
-/* .container {
-    text-align: center;
+.mar-right {
+    margin-right: 20px;
+}
+
+/* #game-area {
 } */
+
+/* .container {
+} */
+
+/* Win Screen <div> */
+#level-won {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+}
+
+#level-won:target {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#level-wonButton {
+    padding: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: 4px solid #6495ed;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#level-wonButton:hover {
+    border: 4px solid #ff0000;
+}
 
 /* Game Over <div> */
 #game-over {
     display: none;
+    top: 65px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 60px;
+    padding: 15px;
+    position: absolute;
+    height: 680px;
+    width: 620px;
+    background: rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+#game-over:target {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#gg-lvlTwo {
+    display: none;
+    top: 65px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 60px;
+    padding: 15px;
+    position: absolute;
+    height: 740px;
+    width: 800px;
+    background: rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+#gg-lvlTwo:target {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-overButton {
+    padding: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: 4px solid #6495ed;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#game-overButton:hover {
+    border: 4px solid #ff0000;
 }
 
 /* Item <div> */
@@ -34,6 +126,21 @@ html, body {
     display: inline-block;
     vertical-align: top;
     text-align: center;
+}
+
+#inline-items {
+    background-color: #6495ed;
+    border: 5px solid #000;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.item-container {
+    display: inline-block;
 }
 
 .item-title {
@@ -66,31 +173,97 @@ html, body {
     border-radius: 50%;
 }
 
+#item-vest {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
+#item-pants {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
+#item-boots {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
+#item-gauntlet {
+    display: inline-block;
+    padding: 10px;
+    background-color: #000;
+    border: 5px solid #ff0000;
+    border-radius: 50%;
+}
+
 /* Images */
 
 #screw {
-    height: 40px;
-    width: 40px;
+    height: 55px;
+    width: 55px;
     background-image: url('../img/screw.png');
     background-size: contain;
     opacity: 0.25;
 }
 
 #wrench {
-    height: 40px;
-    width: 40px;
+    height: 55px;
+    width: 55px;
     background-image: url('../img/wrench.png');
     background-size: contain;
     opacity: 0.25;
 }
 
 #bolt-cutter {
-    height: 40px;
-    width: 40px;
+    height: 55px;
+    width: 55px;
     background-image: url('../img/bolt-cutter.png');
     background-size: contain;
     opacity: 0.25;
 }
+
+#vest {
+    height: 55px;
+    width: 55px;
+    background-image: url('../img/kevlar-vest.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+#pants {
+    height: 55px;
+    width: 55px;
+    background-image: url('../img/armored-pants.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+#boots {
+    height: 55px;
+    width: 55px;
+    background-image: url('../img/leg-armor.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+#gauntlet {
+    height: 55px;
+    width: 55px;
+    background-image: url('../img/mailed-fist.png');
+    background-size: contain;
+    opacity: 0.25;
+}
+
+/*  */
 
 #goblinImg {
     height: 150px;
@@ -120,10 +293,87 @@ html, body {
     background-size: contain;
 }
 
+#screwImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/screw.png');
+    background-size: contain;
+}
+
+#wrenchImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/wrench.png');
+    background-size: contain;
+}
+
+#boltCutterImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/bolt-cutter.png');
+    background-size: contain;
+}
+
 #playerImg {
     height: 150px;
     width: 150px;
     background-image: url('../img/quick-man.png');
+    background-size: contain;
+}
+
+#playerGGImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/quick-man-gg.png');
+    background-size: contain;
+}
+
+#vestImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/kevlar-vest.png');
+    background-size: contain;
+}
+
+#pantsImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/armored-pants.png');
+    background-size: contain;
+}
+
+#bootsImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/leg-armor.png');
+    background-size: contain;
+}
+
+#gauntletImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/mailed-fist.png');
+    background-size: contain;
+}
+
+#clownImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/clown.png');
+    background-size: contain;
+}
+
+#trollImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/troll.png');
+    background-size: contain;
+}
+
+#reptileImg {
+    height: 150px;
+    width: 150px;
+    background-image: url('../img/horned-reptile.png');
     background-size: contain;
 }
 
@@ -167,7 +417,21 @@ html, body {
     width: 60px;
     background-image: url('../img/goblin-head.png');
     background-size: contain;
+}.Goblin {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/goblin-head.png');
+    background-size: contain;
 }.orc {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/orc-head.png');
+    background-size: contain;
+}.Orc {
     background-color: #000;
     display: inline-block;
     height: 60px;
@@ -209,7 +473,64 @@ html, body {
     width: 60px;
     background-image: url('../img/super-mushroom.png');
     background-size: contain;
-}#liveOne {
+}.vest {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/kevlar-vest.png');
+    background-size: contain;
+}.pants {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/armored-pants.png');
+    background-size: contain;
+}.boots {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/leg-armor.png');
+    background-size: contain;
+}.gauntlet {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/mailed-fist.png');
+    background-size: contain;
+}.clown {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/clown.png');
+    background-size: contain;
+}.Clown {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/clown.png');
+    background-size: contain;
+}.troll {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/troll.png');
+    background-size: contain;
+}.reptile {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-image: url('../img/horned-reptile.png');
+    background-size: contain;
+}
+#liveOne {
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -227,6 +548,12 @@ html, body {
     width: 50px;
     background-image: url('../img/hearts.png');
     background-size: contain;
+}#sayGG {
+    display: none;
+    color: #FF0000;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 /* Game Object Pop Up */
@@ -293,6 +620,23 @@ html, body {
     display: block;
 }
 
+#GoblinInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#GoblinInfo:target {
+    display: block;
+}
+
 #orcInfo {
     display: none;
     top: 150px;
@@ -310,6 +654,24 @@ html, body {
     display: block;
 }
 
+/* Orc goes backward */
+#OrcInfo { 
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#OrcInfo:target {
+    display: block;
+}
+
 #maniacInfo {
     display: none;
     top: 150px;
@@ -324,6 +686,74 @@ html, body {
 }
 
 #maniacInfo:target {
+    display: block;
+}
+
+#clownInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#clownInfo:target {
+    display: block;
+}
+
+#ClownInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#ClownInfo:target {
+    display: block;
+}
+
+#trollInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#trollInfo:target {
+    display: block;
+}
+
+#reptileInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#reptileInfo:target {
     display: block;
 }
 
@@ -351,6 +781,126 @@ html, body {
 }
 
 #amanitaInfo:target {
+    display: block;
+}
+
+/*  */
+#bolt-cutterInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#bolt-cutterInfo:target {
+    display: block;
+}
+
+#screwInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#screwInfo:target {
+    display: block;
+}
+
+#wrenchInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#wrenchInfo:target {
+    display: block;
+}
+
+#vestInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#vestInfo:target {
+    display: block;
+}
+
+#pantsInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#pantsInfo:target {
+    display: block;
+}
+
+#bootsInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#bootsInfo:target {
+    display: block;
+}
+
+#gauntletInfo {
+    display: none;
+    top: 150px;
+    border: 5px solid #fff;
+    color: #fff;
+    left: 120px;
+    padding: 15px;
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+#gauntletInfo:target {
     display: block;
 }
 

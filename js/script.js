@@ -1,5 +1,6 @@
 // Set [] on webpage load;
 const gameOver = document.getElementById("game-over");
+const levelWon = document.getElementById("level-won");
 const screw = document.getElementById("screw");
 const screwItem = document.getElementById("item-screw");
 const wrench = document.getElementById("wrench");
@@ -83,6 +84,7 @@ drawWorld();
 // variables:
 var points = 0;
 var lives = ['Live', 'Live', 'Live'];
+var items = [];
 
 // setting player's location:
 var playerLocation = {
@@ -137,7 +139,7 @@ document.onkeydown = function(keydown){
         lives.pop();
         console.log(lives);
     }
-    else if(WORLD[playerLocation.y][playerLocation.x] == 9){ // Orc Enemy
+    else if(WORLD[playerLocation.y][playerLocation.x] == 9){ // Maniac Enemy
         points -= 20;
         console.log("Ouch!" + " Minus 20 Points");
         lives.pop();
@@ -148,18 +150,21 @@ document.onkeydown = function(keydown){
         console.log("Picked up a Screw: " + "10 Points");
         screw.style.opacity = 1;
         screwItem.style.border = "5px solid #008000";
+        items.push("Screw");
     }
     else if(WORLD[playerLocation.y][playerLocation.x] == 4){ // Wrench Item
         points += 10;
         console.log("Picked up a Wrench: " + "10 Points");
         wrench.style.opacity = 1;
         wrenchItem.style.border = "5px solid #008000";
+        items.push("Wrench");
     }
     else if(WORLD[playerLocation.y][playerLocation.x] == 5){ // Bolt-Cutter Item
         points += 15;
         console.log("Picked up a Bolf-Cutter: " + "15 Points");
         boltCutter.style.opacity = 1;
         boltCutterItem.style.border = "5px solid #008000";
+        items.push("Bolt-Cutter");
     }
     else if(WORLD[playerLocation.y][playerLocation.x] == 7){ // Mushroom Item
         points += 25;
@@ -177,27 +182,33 @@ document.onkeydown = function(keydown){
             liveOne.style.display = "inline-block";
         }
     }
-
+    
     WORLD[playerLocation.y][playerLocation.x] = 0; // make every index value 0 (blank) to mimic item pickup;
+    
+    console.log("Total: " + points);
 
     // Keep track of Player Lives
     if(lives.length == 2) {
         liveThree.style.display = "none";
-        // playerLocation.x = 1;
-        // playerLocation.y = 1;
     }
     else if(lives.length == 1) {
         liveTwo.style.display = "none";
     }
     else if(lives.length == 0) {
         liveOne.style.display = "none";
-        gameOver.style.display = "block";
+        gameOver.style.display = "flex";
+        gameOver.style.flexDirection = "column";
+        gameOver.style.justifyContent = "center";
+        gameOver.style.alignItems = "center";
+        sayGG.style.display = "block";
+    }
+
+    if(items.length == 3){
+        levelWon.style.display = "block";
     }
 
     movePlayer();
     drawWorld();
-
-    console.log("Total: " + points);
 }
 
 
@@ -275,6 +286,16 @@ function moveFastEnemy(){
 
 // setInterval(moveFastEnemy, 1000);
 
-// 
+// Reload page onClick (restartGame btn)
+function restartGame() {
+    location.reload();
+    return false;
+}
+
+// Congrats! Let's play next level:
+function nextLevel() {
+    window.location.replace("levelTwo.html");
+}
+
 // Generate random world when web-page is reloaded
 // create algorithm that makes enemy chase player

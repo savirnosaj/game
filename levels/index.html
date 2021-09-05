@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Game</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+
+            <div id="game-area">
+
+                <!-- Game World -->
+                <div id="world"></div>
+
+                <!-- Display collected Items -->
+                <div id="items">
+
+                    <div class="container">
+                        
+                        <h2>COLLECTED ITEMS: </h2>
+
+                        <div id="item-screw">
+                            <img id="screw">
+                        </div>
+
+                        <p class="item-title">Screw</p>
+
+                        <div id="item-wrench">
+                            <img id="wrench">
+                        </div>
+
+                        <p class="item-title">Wrench</p>
+
+                        <div id="item-boltCutter">
+                            <img id="bolt-cutter">
+                        </div>
+
+                        <p class="item-title">Bolt Cutter</p>
+
+                        <h2>LIVES REMAINING:</h2>
+
+                        <div id="player-lives">
+                            <div id="liveOne"></div>
+                            <div id="liveTwo"></div>
+                            <div id="liveThree"></div>
+                            <div id="sayGG">Game Over</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Player Object -->
+                <a id="button" href="#playerInfo"><div id="player"></div></a>
+
+            </div>
+
+            <!-- Game Won -->
+            <div id="level-won">
+
+                <h1>Great job Hero</h1>
+                <p>You collected key items necessary to defeat the evil oligarchy</p>
+                <img id="playerImg"><br>
+                <button id="level-wonButton" onclick="nextLevel()">Continue</button>
+            </div>
+
+            <!-- Game Over -->
+            <div id="game-over">
+
+                <h1>You died ...</h1>
+                <img id="playerGGImg"><br>
+                <button id="game-overButton" onclick="restartGame()">Start over</button>
+            </div>
+
+            <!-- Game Object Info -->
+            <!-- Enemies -->
+            <div id="goblinInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Goblin Backstory</h1>
+                <img id="goblinImg">
+                <p>Goblin is one of the creatures that sneaked to Seattle when the portal to our universe opened. Goblins are moving fast and unpredictably. They're also smart and sneaky.</p>
+            </div>
+            <!--  -->
+            <div id="orcInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Orc Backstory</h1>
+                <img id="orcImg">
+                <p>Orc is slow and stupid. He's extremely powerful and has brute strength. With one hit he can break hero's skull. He's a known ally of a goblin.</p>
+                <p>He does not disdain to eat any kind of food.</p>
+            </div>
+            <!--  -->
+            <div id="maniacInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Maniac Backstory</h1>
+                <img id="maniacImg">
+                <p>Maniac was already in our world when the portal opened but his strength has greatly increased when the evil sneaked in our world.</p>
+                <p>The worst thing that can happen to you if they catch is that you die.</p>
+            </div>
+            <!-- Items -->
+            <div id="amanitaInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Amanita Muscaria Backstory</h1>
+                <img id="amanitaImg">
+
+                <a class="link" href="https://ericdubay.wordpress.com/2018/07/04/jesus-christ-the-magic-mushroom/">
+                    <p>Exodus 16:10 - 20</p>
+                </a>
+
+                <img style="width: 125px;" src="../img/amanitaOne.PNG" alt="">
+                <img style="width: 125px;" src="../img/amanitaThree.PNG" alt="">
+                <img style="width: 125px;" src="../img/amanitaFour.PNG" alt="">
+                <img style="width: 125px;" src="../img/amanitaFive.PNG" alt="">
+                <img style="width: 100px;" src="../img/amanitaTwo.PNG" alt="">
+            </div>
+            <!--  -->
+            <div id="screwInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Screw</h1>
+                <img id="screwImg">
+                <p>Screw is used to mount other picked tools together.</p>
+            </div>
+            <!--  -->
+            <div id="wrenchInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Wrench</h1>
+                <img id="wrenchImg">
+                <p>Wrench can be used as a tool or as a weapon.</p>
+                <p>Goblins are especailly feared of this item.</p>
+            </div>
+
+            <div id="bolt-cutterInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Bolt Cutter</h1>
+                <img id="boltCutterImg">
+                <p>Bolt Cutter can be used as a tool or as a weapon.</p>
+                <p>It can be used to cut the wires or the legs of goblins.</p>
+            </div>
+
+            <!-- Player -->
+            <div id="playerInfo">
+
+                <a id="close" href="#">X</a>
+                <h1>Player Backstory</h1>
+                <img id="playerImg">
+                <p>Our main character is a normal person that used to work in the office until the invasion to our world happened. When the invasion happened he was living a normal life like the rest of us. Unfortunately, his family was killed and because of this he decided to obliterate all the evil creatures.</p>
+                <p>In addition to that, he still needs to find out how to close the portal.</p>
+                <p>If that's not enough, imagine that the evil creatures took over the government and now he's basically by himself against all the evil in the world.</p>
+            </div>
+
+        </div>
+
+        <!-- JS -->
+        <script src="../js/script.js"></script>
+    </body>
+</html>
