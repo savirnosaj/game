@@ -241,7 +241,7 @@ function moveSlowEnemy(){
     }
 }
 
-// setInterval(moveSlowEnemy, 2500);
+setInterval(moveSlowEnemy, 2500);
 
 // 
 
@@ -284,7 +284,7 @@ function moveFastEnemy(){
     }
 }
 
-// setInterval(moveFastEnemy, 1000);
+setInterval(moveFastEnemy, 1000);
 
 // Reload page onClick (restartGame btn)
 function restartGame() {
@@ -294,7 +294,7 @@ function restartGame() {
 
 // Congrats! Let's play next level:
 function nextLevel() {
-    window.location.replace("levelTwo.html");
+    window.location.replace("levels/levelTwo.html");
 }
 
 // Generate random world when web-page is reloaded
